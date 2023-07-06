@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "703641283225",
+    "firebase_url": "https://devhackshackathon-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "devhackshackathon",
+    "storage_bucket": "devhackshackathon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703641283225:android:54fc53cea73c646b74e608",
+        "android_client_info": {
+          "package_name": "com.purabmodi.devhacksapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703641283225-tavpjlrf0accfqu9jd6fq8f0bq7pk8nn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDghFqKtkClN0GbSZeNLy0t_ZWXhyKqA8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703641283225-tavpjlrf0accfqu9jd6fq8f0bq7pk8nn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/lostieFragment">
+
+    <fragment
+        android:id="@+id/lostieFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.LostieFragment"
+        android:label="Scan"
+        tools:layout="@layout/fragment_lostie" >
+        <action
+            android:id="@+id/action_lostieFragment_to_lostItemDetailsFragment"
+            app:destination="@id/lostItemDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_lostieFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wellbeingFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.WellbeingFragment"
+        android:label="WellBeing"
+        tools:layout="@layout/fragment_wellbeing" />
+    <fragment
+        android:id="@+id/hostelFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.HostelFragment"
+        android:label="Hostel"
+        tools:layout="@layout/fragment_hostel" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/lostItemDetailsFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.LostItemDetailsFragment"
+        android:label="fragment_lost_item_details"
+        tools:layout="@layout/fragment_lost_item_details" >
+        <action
+            android:id="@+id/action_lostItemDetailsFragment_to_lostieFragment"
+            app:destination="@id/lostieFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/lostieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.purabmodi.devhacksapp.ui.fragments.InventoryFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory" >
+        <action
+            android:id="@+id/action_inventoryFragment_to_lostieFragment"
+            app:destination="@id/lostieFragment" />
+    </fragment>
+</navigation>
