@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -55,6 +56,8 @@ class InventoryFragment : Fragment() {
                     dataList.add(item!!)
                 }
                 inventoryAdapter.setItems(dataList)
+                binding.inventoryAnimation.isVisible=false
+                binding.inventoryRC.isVisible = true
 
             }
 

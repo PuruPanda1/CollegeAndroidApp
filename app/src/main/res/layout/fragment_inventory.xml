@@ -3,13 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.InventoryFragment">
 
    <androidx.recyclerview.widget.RecyclerView
+       android:visibility="invisible"
        android:id="@+id/inventoryRC"
        tools:listitem="@layout/inventory_item_row"
        tools:itemCount="5"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
+
+   <com.airbnb.lottie.LottieAnimationView
+       android:id="@+id/inventoryAnimation"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+      app:lottie_rawRes="@raw/searchanimation"
+      app:lottie_autoPlay="true"
+      app:lottie_loop="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
