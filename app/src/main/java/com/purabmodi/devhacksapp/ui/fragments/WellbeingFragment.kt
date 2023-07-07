@@ -1,60 +1,75 @@
 package com.purabmodi.devhacksapp.ui.fragments
 
+import android.app.usage.UsageStatsManager
+import android.content.pm.PackageManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.purabmodi.devhacksapp.R
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.fragment.app.Fragment
+import com.purabmodi.devhacksapp.databinding.FragmentWellbeingBinding
+import java.util.Calendar
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [WellbeingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class WellbeingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
+    private var _binding: FragmentWellbeingBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_wellbeing, container, false)
+
+        _binding = FragmentWellbeingBinding.inflate(layoutInflater, container, false)
+
+        init()
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment WellbeingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            WellbeingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun init() {
+        val usageStatsManager = getSystemService(requireContext(),UsageStatsManager::class.java) as UsageStatsManager
+
+        // Define the time range for which you want to retrieve usage statistics
+        val calendar = Calendar.getInstance()
+        val endTime = calendar.timeInMillis
+        calendar.add(Calendar.DAY_OF_WEEK, -1) // 1 day ago
+        val startTime = calendar.timeInMillis
+
+        // Retrieve the usage statistics using queryUsageStats()
+        val usageStatsList = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, startTime, endTime)
+
+        for (usageStats in usageStatsList) {
+            val packageName = usageStats.packageName
+            val totalTimeInForeground = usageStats.totalTimeInForeground
+            try{
+//                val packageManager = requireContext().packageManager
+//                val appInfo = packageManager.getApplicationInfo(packageName,PackageManager.GET_META_DATA)
+//                val appName = packageManager.getApplicationLabel(appInfo).toString()
+
+                val packageNames = packageName.split("\\.".toRegex())
+//                val appName = packageName.replace(regex,"").trim()
+
+//                val packageNames: Array<String> = packageName.split("\\.")
+                val appName = packageNames[packageNames.size - 1].trim()
+
+                if(totalTimeInForeground>0){
+                    var min = millisecondsToMinutes(totalTimeInForeground)
+                    Log.d("USAGESTATSCHECK", "AppName = $appName PackageName = $packageName & Total Time = $min minutes")
                 }
+            }catch (e:PackageManager.NameNotFoundException){
+                e.printStackTrace()
             }
+
+            // Process the usage data as per your requirements
+            // You can retrieve additional information such as app launch count, last time used, etc. from the UsageStats object
+        }
+
+
     }
+    fun millisecondsToMinutes(milliseconds: Long): Long {
+        val minutes = milliseconds / 1000 / 60
+        return minutes
+    }
+
 }
