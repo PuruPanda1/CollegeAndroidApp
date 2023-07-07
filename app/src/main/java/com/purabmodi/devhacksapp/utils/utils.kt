@@ -9,6 +9,23 @@ import java.util.UUID
 
 class utils {
 
+    val packages=HashMap<String,String>()
+
+    fun checkPackages(packageName: String):String{
+        packages["com.snapchat.android"]="Snapchat"
+        packages["com.instagram.android"]="Instagram"
+        packages["com.spotify.music"]="Spotify"
+        packages["com.facebook.lite"]="Facebook Lite"
+        packages["cn.wps.moffice_eng"]="WPS Office"
+        packages["com.linkedin.android"]="Linkedin"
+        packages["com.github.android"]="Linkedin"
+        if(packages.contains(packageName)){
+            return packages[packageName]!!
+        }
+        return ""
+    }
+
+
     fun dateFormatter(date:LocalDateTime):String{
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         return date.format(formatter)

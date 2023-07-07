@@ -2,21 +2,19 @@ package com.purabmodi.devhacksapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.purabmodi.devhacksapp.data.models.Item
+import com.purabmodi.devhacksapp.R
+import com.purabmodi.devhacksapp.data.models.App
 import com.purabmodi.devhacksapp.databinding.InventoryItemRowBinding
 
-class InventoryAdapter(
+class WellbeingAdapter(
+    private val onClick: (item: App) -> Unit
+) : RecyclerView.Adapter<WellbeingAdapter.ViewHolder>() {
 
-    private val onClick: (item: Item) -> Unit
-) : RecyclerView.Adapter<InventoryAdapter.ViewHolder>() {
+    private var itemList = ArrayList<App>()
 
-    private var itemList = ArrayList<Item>()
-
-    fun setItems(itemList:ArrayList<Item>){
+    fun setItems(itemList:ArrayList<App>){
         this.itemList.addAll(itemList)
         notifyDataSetChanged()
     }
@@ -42,19 +40,19 @@ class InventoryAdapter(
     class ViewHolder(private val binding: InventoryItemRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
-            item: Item,
-            onClick: (item: Item) -> Unit
+            item: App,
+            onClick: (item: App) -> Unit
         ) {
             binding.itemName.text = item.name
-            binding.itemCat.text = item.category
-            binding.itemDate.text = item.submitDate
+            binding.itemCat.text = ""
+            binding.itemDate.text = item.usage
             binding.root.setOnClickListener {
                 onClick(item)
             }
 //            binding.newsPublishedAt.text = item.publishedAt
-            Glide.with(binding.root.context)
-                .load(item.image)
-                .into(binding.itemImage)
+//            Glide.with(binding.root.context)
+//                .load(R.drawable.)
+//                .into(binding.itemImage)
         }
     }
 

@@ -3,12 +3,12 @@
     <item
         android:title="Scan"
         android:id="@+id/lostieFragment"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_scan"
         />
     <item
         android:title="WellBeing"
         android:id="@+id/wellbeingFragment"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/ic_wellbeing"
         />
     <item
         android:title="Hostel"
