@@ -35,7 +35,8 @@ class LostieFragment : Fragment() {
 
     private fun setListeners() {
         binding.findLostItemBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_lostieFragment_to_inventoryFragment)
+            findNavController().navigate(R.id.action_lostieFragment_to_inventoryFragment
+            )
         }
         binding.scanButton.setOnClickListener {
             findNavController().navigate(R.id.action_lostieFragment_to_lostItemDetailsFragment)

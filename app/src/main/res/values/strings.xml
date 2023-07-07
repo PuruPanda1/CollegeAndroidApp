@@ -5,4 +5,9 @@
     <string name="scan">Tap To Scan</string>
     <string name="lostDeviceText">Find My Lost Item</string>
     <string name="date">Date %s</string>
+    <string name="name">Name</string>
+    <string name="mobile_number">USN Number</string>
+    <string name="email">Course</string>
+    <string name="applyHostel">Apply to Hostel</string>
+    <string name="logout">Log out</string>
 </resources>
