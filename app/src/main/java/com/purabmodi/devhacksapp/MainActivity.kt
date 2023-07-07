@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.purabmodi.devhacksapp.databinding.ActivityMainBinding
 
@@ -21,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
 
         val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottomAppBar)
-        setupWithNavController(bottomNavBar,navController)
+        val appBarConfiguration = AppBarConfiguration(bottomNavBar.menu)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupWithNavController(bottomNavBar,navController)
 
     }
 }

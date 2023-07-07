@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/lostieFragment"
         android:name="com.purabmodi.devhacksapp.ui.fragments.LostieFragment"
-        android:label="Scan"
+        android:label="Lost and Found"
         tools:layout="@layout/fragment_lostie" >
         <action
             android:id="@+id/action_lostieFragment_to_lostItemDetailsFragment"
