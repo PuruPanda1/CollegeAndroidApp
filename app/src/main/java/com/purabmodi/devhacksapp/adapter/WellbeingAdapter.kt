@@ -50,9 +50,13 @@ class WellbeingAdapter(
                 onClick(item)
             }
 //            binding.newsPublishedAt.text = item.publishedAt
-//            Glide.with(binding.root.context)
-//                .load(R.drawable.)
-//                .into(binding.itemImage)
+            if(item.image.isNotBlank()){
+                Glide.with(binding.root.context)
+                    .load(item.image)
+                    .into(binding.itemImage)
+            }else{
+                binding.itemImage.foreground = binding.itemImage.context.getDrawable(R.drawable.ic_launcher_foreground)
+            }
         }
     }
 

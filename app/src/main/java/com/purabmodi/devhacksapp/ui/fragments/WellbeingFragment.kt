@@ -82,7 +82,8 @@ class WellbeingFragment : Fragment() {
                     )
                     totalTime += usageStats.totalTimeInForeground
                     var appTotalTime = getTotalTime(usageStats.totalTimeInForeground)
-                    appList.add(App(appName, appTotalTime, usageStats.totalTimeInForeground))
+                    var image = utils().getImages(packageName)
+                    appList.add(App(appName, appTotalTime, usageStats.totalTimeInForeground,image))
                 }
             } catch (e: PackageManager.NameNotFoundException) {
                 e.printStackTrace()
