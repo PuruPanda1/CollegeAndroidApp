@@ -121,7 +121,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/profileMobileNumber"
+                    android:id="@+id/usn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
@@ -162,7 +162,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/profileEmailId"
+                    android:id="@+id/course"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -174,7 +174,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/editButton"
+            android:id="@+id/applyToHostelBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

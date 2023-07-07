@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.purabmodi.devhacksapp.R
 import com.purabmodi.devhacksapp.databinding.FragmentLostieBinding
+import com.purabmodi.devhacksapp.utils.SharedPref
 
 class LostieFragment : Fragment() {
     private var _binding: FragmentLostieBinding? = null
@@ -27,6 +28,8 @@ class LostieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLostieBinding.inflate(layoutInflater, container, false)
+
+//        SharedPref(requireContext()).setUserName("1ST22CS415")
 
         setListeners()
 

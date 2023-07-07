@@ -41,7 +41,6 @@ class utils {
         return ""
     }
 
-
     fun dateFormatter(date:LocalDateTime):String{
         val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
         return date.format(formatter)
