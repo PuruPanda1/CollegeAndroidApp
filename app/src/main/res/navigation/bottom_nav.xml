@@ -25,11 +25,6 @@
         android:label="WellBeing"
         tools:layout="@layout/fragment_wellbeing" />
     <fragment
-        android:id="@+id/hostelFragment"
-        android:name="com.purabmodi.devhacksapp.ui.fragments.HostelFragment"
-        android:label="Hostel"
-        tools:layout="@layout/fragment_hostel" />
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.purabmodi.devhacksapp.ui.fragments.ProfileFragment"
         android:label="Profile"

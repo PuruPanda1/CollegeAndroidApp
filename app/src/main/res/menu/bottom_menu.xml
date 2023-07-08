@@ -6,16 +6,6 @@
         android:icon="@drawable/ic_scan"
         />
     <item
-        android:title="WellBeing"
-        android:id="@+id/wellbeingFragment"
-        android:icon="@drawable/ic_wellbeing"
-        />
-    <item
-        android:title="Hostel"
-        android:id="@+id/hostelFragment"
-        android:icon="@drawable/ic_search"
-        />
-    <item
         android:title="Profile"
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_search"

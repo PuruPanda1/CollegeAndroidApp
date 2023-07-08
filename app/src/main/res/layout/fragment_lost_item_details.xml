@@ -26,7 +26,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvLayout1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -38,7 +38,7 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="259dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/lostItemCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvLayout2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -59,7 +59,7 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="259dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/lostItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

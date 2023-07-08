@@ -1,27 +1,21 @@
 package com.purabmodi.devhacksapp.ui.fragments
 
-import android.app.Activity
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import com.github.dhaval2404.imagepicker.ImagePicker
 import com.purabmodi.devhacksapp.R
 import com.purabmodi.devhacksapp.databinding.FragmentLostieBinding
-import com.purabmodi.devhacksapp.utils.SharedPref
 
 class LostieFragment : Fragment() {
     private var _binding: FragmentLostieBinding? = null
     private val binding get() = _binding!!
     private lateinit var imageUri:Uri
+    private lateinit var bitmap: Bitmap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +29,8 @@ class LostieFragment : Fragment() {
 
         return binding.root
     }
+
+
 
     private fun setListeners() {
         binding.findLostItemBtn.setOnClickListener {
