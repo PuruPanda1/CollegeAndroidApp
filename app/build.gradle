@@ -64,6 +64,9 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:4.3.0'
 //    lottie animations
     implementation "com.airbnb.android:lottie:6.0.1"
-//    mlkit
+//    retrofit
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 }
